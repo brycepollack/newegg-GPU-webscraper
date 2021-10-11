@@ -20,8 +20,7 @@ f.write(headers)
 #For loop for data retrieval
 for container in containers:
     #Grabs brand name
-    brandContainer = container.find_all("div", attrs={"class": "item-branding"})
-    brand = brandContainer[0].text.strip()
+    brand = container.div.div.a.img['title']
     
     #Grabs product name
     productContainer = container.findAll("a", {"class":"item-title"})
